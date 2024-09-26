@@ -1,0 +1,26 @@
+# Ignorar archivos compilados de Python
+*.pyc
+__pycache__/
+
+# Ignorar la base de datos local (si usas SQLite)
+db.sqlite3
+
+# Ignorar archivos de medios y de carga
+/media/
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar entornos virtuales
+venv_SGP/
+
+# Ignorar configuraciones específicas del entorno
+.idea/
+.vscode/
+*.swp
+
+# Ignorar archivos estáticos generados
+/static/
+
+# Archivos que contengan claves o configuraciones sensibles
+.env
