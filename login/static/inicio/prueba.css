@@ -1,0 +1,98 @@
+.inicio,
+.inicio * {
+  box-sizing: border-box;
+}
+.inicio {
+  background: linear-gradient(
+    242.76deg,
+    rgba(203, 46, 242, 0.51) 0%,
+    rgba(255, 84, 94, 1) 100%
+  );
+  height: 1024px;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.rea-donde-los-estudiantes-lideres-colaboradores-y-administrativos-realizamos-actividades-para-el-crecimiento-de-todos {
+  color: #ececec;
+  text-align: left;
+  font-family: var(
+    --titulo-texto-de-parrafo-font-family,
+    "Nexa-Regular",
+    sans-serif
+  );
+  font-size: var(--titulo-texto-de-parrafo-font-size, 24px);
+  font-weight: var(--titulo-texto-de-parrafo-font-weight, 400);
+  position: absolute;
+  left: calc(50% - 640px);
+  top: calc(50% - 12px);
+  width: 673px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sistema-de-gesti-n-del-desempe-o {
+  color: #ececec;
+  text-align: left;
+  font-family: var(--super-titulo-font-family, "NexaBold-Regular", sans-serif);
+  font-size: var(--super-titulo-font-size, 64px);
+  font-weight: var(--super-titulo-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 80px;
+  top: calc(50% - 312px);
+  width: 653px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.group-1 {
+  height: auto;
+  position: absolute;
+  left: 990px;
+  top: -88px;
+  overflow: visible;
+}
+.mariposa {
+  width: 865.34px;
+  height: 770.15px;
+  position: absolute;
+  left: -130px;
+  top: 845.89px;
+  transform-origin: 0 0;
+  transform: rotate(-45deg) scale(1, 1);
+  object-fit: cover;
+}
+.frame-1578 {
+  width: 508px;
+  height: 50px;
+  position: absolute;
+  left: 850px;
+  top: 812px;
+}
+.rectangle-1383 {
+  background: #29a3cc;
+  border-radius: 10px;
+  width: 500px;
+  height: 50px;
+  position: absolute;
+  left: calc(50% - 250px);
+  top: calc(50% - 25px);
+}
+.entrar {
+  color: #ffffff;
+  text-align: left;
+  font-family: var(
+    --titulo-texto-de-parrafo-font-family,
+    "Nexa-Regular",
+    sans-serif
+  );
+  font-size: var(--titulo-texto-de-parrafo-font-size, 24px);
+  font-weight: var(--titulo-texto-de-parrafo-font-weight, 400);
+  position: absolute;
+  left: calc(50% - 32px);
+  top: calc(50% - 14px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

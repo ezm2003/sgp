@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear Proyectos{% endblock %}
+
+{% block head %}
+    <style>
+        .form-control {
+            color: #333;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .form-control option {
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h2>Crear Proyecto</h2>
+
+    <form method="post" action="{% url 'main:crear_Proyectos' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fk_estado">Estado:</label>
+            <select id="fk_estado" name="fk_estado" class="form-control" required>
+                {% for estado in estados %}
+                    <option value="{{ estado.id_estado }}">{{ estado.tipo }}</option>
+                {% empty %}
+                    <option value="">No hay estados disponibles</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Crear Proyecto</button>
+        </div>
+    </form>
+{% endblock %}

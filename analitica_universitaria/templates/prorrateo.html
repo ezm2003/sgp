@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Prorrateo{% endblock %}
+
+{% block body %}
+{% load static %}
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <div class="header-title">
+            <h4 class="card-title">Seleccionar Profesor</h4>
+        </div>
+    </div>
+    <div class="card-body">
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p>
+
+        <div class="form-group">
+            <label class="form-label">Seleccionar</label>
+            <form method="post">
+                {% csrf_token %}
+                <select id="professorSelect" name="profesor" class="form-select mb-3 shadow-none" style="width: 100%;">
+                    <option value="">--Selecciona un profesor--</option>
+                    {% for profesor in profesores %}
+                    <option value="{{ profesor }}">{{ profesor }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-primary">Generar</button>
+            </form>
+        </div>
+
+        <!-- Div para el gráfico de pie -->
+        <div id="chart-container-pie">
+            {{ graph_html_pie|safe }}
+        </div>
+
+        <!-- Div para el gráfico de barras -->
+        <div id="chart-container-bar">
+            {{ graph_html_bar|safe }}
+        </div>
+
+    </div>
+</div>
+{% endblock %}

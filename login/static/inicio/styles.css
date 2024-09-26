@@ -1,0 +1,105 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.custom-background {
+  background: linear-gradient(
+    242.76deg,
+    rgba(203, 46, 242, 0.51) 0%,
+    rgba(255, 84, 94, 1) 100%
+  );
+  height: 100vh; /* 100% de la altura de la ventana del navegador */
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden; /* Evita el desplazamiento */
+  padding: 0; /* Asegura que no haya relleno en el contenedor */
+  margin: 0; 
+}
+
+.custom-title {
+  color: #ececec;
+  text-align: left;
+  font-family: 'NexaBold-Regular', sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+
+
+.custom-description {
+  color: #ececec;
+  text-align: left;
+  font-family: 'Nexa-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  width: 80%; /* Ajusta el ancho para permitir el ajuste del texto */
+  max-width: 600px; /* Establece un ancho máximo para pantallas grandes */
+  white-space: normal; /* Permite que el texto se ajuste en múltiples líneas */
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%; /* Aumenta el tamaño de la imagen */
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.mariposa {
+  width: 100%; /* Aumenta el tamaño de la imagen */
+  max-width: 1000px;
+  height: auto; /* Mantiene la proporción de la imagen */
+  position: absolute;
+  left: 100px; /* Mueve la imagen a la izquierda */
+  bottom: 0; /* Alinea la imagen al fondo */
+  transform: rotate(-5deg); /* Mantiene la rotación */
+}
+
+.custom-button {
+  position: absolute;
+  bottom: 10%; /* Mueve el botón más arriba usando un porcentaje */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #29a3cc;
+  color: #ffffff;
+  padding: 12px 5%; /* Ajusta el padding en porcentaje para hacerlo responsive */
+  border-radius: 10px;
+  text-decoration: none;
+  width: 70%; /* Ajusta el ancho a un porcentaje del contenedor padre */
+  max-width: 300px; /* Establece un ancho máximo para pantallas grandes */
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.custom-button:hover {
+  background-color: #1d8abf;
+}
+
+@media (max-width: 768px) {
+  .custom-title {
+    font-size: 48px;
+    top: 10%;
+    width: 100%; /* Aumenta el ancho para pantallas pequeñas */
+    max-width: none;
+  }
+
+  .custom-description {
+    font-size: 20px;
+    top: calc(10% + 48px + 10px); /* Ajusta la posición vertical de la descripción en pantallas pequeñas */
+  }
+  .custom-svg {
+    width: 50%;
+  }
+  .custom-image {
+    width: 70%;
+  }
+
+  .custom-button {
+    padding: 10px 4%; /* Ajusta el padding para pantallas más pequeñas */
+    width: 80%; /* Aumenta el ancho para pantallas más pequeñas */
+    max-width: none; /* Elimina el ancho máximo en pantallas pequeñas */
+  }
+
+}
+

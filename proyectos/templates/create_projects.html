@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear Proyectos{% endblock %}
+
+
+{% block body %}
+{% load static %}
+
+
+
+<div>
+    <div class="row">
+
+        <div class="col-xl-12 col-lg-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
+                        <h4 class="card-title">Nuevo Proyecto</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="new-user-info">
+                        <form method="post" action="{% url 'app_proyectos:create_projects' %}">
+                            {% csrf_token %}
+
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label class="form-label" for="project_id">Id:</label>
+                                    <select class="form-control" id="project_id" name="project_id">
+                                        <option value="">Seleccione un ID</option>
+                                        {% for proj in projects %}
+                                            <option value="{{ proj.id_proyecto }}" {% if project.id_proyecto == proj.id_proyecto %}selected{% endif %}>
+                                                {{ proj.id_proyecto }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <label class="form-label" for="fname">Nombre:</label>
+                                    <input type="text" class="form-control" id="project_name" name="project_name" 
+                                        placeholder="Nombre del proyecto" value="{{ project.nombre|default:'' }}">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="form-label" for="cname">Descripcion:</label>
+                                    <input type="text" class="form-control" id="project_description" name="project_description"
+                                        placeholder="Descripcion del proyecto" value="{{ project.descripcion|default:'' }}">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="exampleInputdate">Fecha de inicio</label>
+                                    <input type="date" class="form-control" id="project_date_start" name="project_date_start"
+                                        value="{{ project.fecha_inicio|default:'' }}">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="exampleInputdate">Fecha de finalizacion</label>
+                                    <input type="date" class="form-control" id="project_date_end" name="project_date_end"
+                                        value="{{ project.fecha_fin|default:'' }}">
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label class="form-label" for="cname">Objetivo:</label>
+                                    <input type="text" class="form-control" id="project_objetive" name="project_objetive"
+                                        placeholder="Objetivo del proyecto" value="{{ project.objetivo|default:'' }}">
+                                </div>
+
+                                
+                            </div>
+                            <hr>
+                            <button type="submit" class="btn btn-primary" name="send" value="project_save">Crear</button>
+                            <button type="submit" class="btn btn-primary" name="send" value="project_consult">Consultar</button>
+                            <button type="submit" class="btn btn-warning" name="send" value="project_update">Modificar</button>
+                            <button type="submit" class="btn btn-danger" name="send" value="project_delete">Borrar</button>
+                            <button type="submit" class="btn btn-primary" name="send" value="project_cancel">Cancelar</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!--
+<div>
+    <div class="row">
+
+        <div class="col-xl-12 col-lg-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
+                        <h4 class="card-title">Nuevo Proyecto</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="new-user-info">
+                        <form method="post" action="{% url 'app_proyectos:create_projects' %}">
+                            {% csrf_token %}
+
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="fname">Id:</label>
+                                    <input type="number" class="form-control" id="project_id" name="project_id" placeholder="Id del proyecto" required>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="fname">Nombre:</label>
+                                    <input type="text" class="form-control" id="project_name" name="project_name" placeholder="Nombre del proyecto" required>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="form-label" for="cname">Descripcion:</label>
+                                    <input type="text" class="form-control" id="project_description" name="project_description"
+                                        placeholder="Descripcion del proyecto">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="exampleInputdate">Fecha de inicio</label>
+                                    <input type="date" class="form-control" id="project_date_start"  name="project_date_start">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="exampleInputdate">Fecha de finalizacion</label>
+                                    <input type="date" class="form-control" id="project_date_end" name="project_date_end">
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label class="form-label" for="cname">Objetivo:</label>
+                                    <input type="text" class="form-control" id="project_objetive" name="project_objetive"
+                                        placeholder="Objetivo del proyecto">
+                                </div>
+                            </div>
+                            <hr>
+                            <button type="submit" class="btn btn-primary" name="send" value="project_save">Crear</button>
+                            <button type="submit" class="btn btn-primary" name="send" value="project_consult">Consultar</button>
+                            <button type="submit" class="btn btn-warning" name="send" value="project_update">Modificar</button>
+                            <button type="submit" class="btn btn-danger" name="send" value="project_delete">Borrar</button>
+                            <button type="submit" class="btn btn-primary" name="send" value="project_cancel">Cancelar</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+{% endblock %}
